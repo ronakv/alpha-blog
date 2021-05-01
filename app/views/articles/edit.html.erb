@@ -1,0 +1,40 @@
+<h1>Edit an existing article</h1>
+<! --
+Iterating over errors generated from the article trying to be saved
+Each message is displayed as a list. Since the first time this page
+is loaded, @article is empty, we add @article = Article.new in the
+controller
+-->
+
+<%if @article.errors.any? %>
+  <h2>The following errors prevented the article from being saved</h2>
+  <ul>
+    <% @article.errors.full_messages.each do|msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+
+<%else %>
+
+  <! --
+  Submits form to edit the entry
+  -->
+
+  <%= form_with(model: @article, local:true) do |f| %>
+    <p>
+      <%= f.label :title %>
+      <br>
+      <%= f.text_field :title %>
+    </p>
+    <br>
+    <p>
+      <%=f.label :description %>
+      <br>
+      <%= f.text_area :description %>
+    </p>
+    <br>
+    <p>
+      <%= f.submit %>
+    </p>
+  <% end %>
+<% end %>
