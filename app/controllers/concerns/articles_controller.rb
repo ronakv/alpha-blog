@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  # DO set_article before show, edit, update, destroy
+  before_action :set_article, only: [:show, :edit, :update, :destroy]
   def show
     #byebug
     @article = Article.find(params[:id])
@@ -15,13 +17,13 @@ class ArticlesController < ApplicationController
 
   def edit
 
-    @article = Article.find(params[:id])
+    #@article = Article.find(params[:id])
   end
 
   def create
     # Whitelisted the title and description fields of Article to be filled from the form
 
-    @article = Article.new(params.require(:article).permit(:title, :description))
+    @article = Article.new(article_params)
     #render plain: @article
     #
     # If article was successfully saved
@@ -51,13 +53,32 @@ class ArticlesController < ApplicationController
 
   def update
 
-    @article = Article.find(params[:id])
-    if @article.update(params.require(:article).permit(:title, :description))
+    #@article = Article.find(params[:id])
+    if @article.update(article_params)
       flash[:notice] = "Article is updated successfully"
       redirect_to @article
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    #@article = Article.find(params[:id])
+    @article.destroy
+    redirect_to articles_path
+  end
+
+  private
+  # methods only for use with this controller
+
+  def set_article
+    # finding the article by id
+    @article = Article.find(params[:id])
+  end
+
+  def article_params
+    # whitelisting the input
+    params.require(:article).permit(:title, :description)
   end
 
 
