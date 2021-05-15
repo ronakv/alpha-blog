@@ -1,0 +1,28 @@
+@import "node_modules/bootstrap/dist/css/bootstrap.css";
+
+#logo{
+  float: left;
+  font-size: 1.7em;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+#homeJumbo{
+  background-image: asset-url('jumbo1.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 0px;
+}
+
+#homeSubJumbo1{
+  margin-top: 0px !important;
+}
+
+#sticky-footer {
+  flex-shrink: none;
+}
+
+#indexPage{
+  background-color: lightgrey;
+}

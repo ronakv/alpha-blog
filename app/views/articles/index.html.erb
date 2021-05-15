@@ -2,11 +2,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
 
 </head>
-<h1>Articles Listing Page</h1>
+<div id = "indexPage">
+<h1 class = "text-center mt-3">Articles Listing Page</h1>
 
 <table>
   <thead>
@@ -18,7 +18,31 @@
   </thead>
 
   <thbdy>
+
     <% @articles.each do |article| %>
+      <div class = "container">
+        <div class = "row justify-content-md-center">
+          <div class = "col-8 mt-3 mb-5">
+            <div class="shadow mb-5 bg-white rounded">
+            <div class="card text-center">
+          <div class="card-header font-italic">
+            By Ronak Vimadalal
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"><%= article.title %></h5>
+            <p class="card-text"><%= article.description %></p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <%= link_to 'Show', article_path(article), method: :get , class: "btn btn-primary"%>
+          </div>
+          <div class="card-footer text-muted">
+              create on edited on
+          </div>
+            </div>
+        </div>
+          </div>
+          </div>
+      </div>
+
       <tr>
 
         <td><%= article.title %></td>
@@ -35,3 +59,4 @@
   <h>Want to add a new article ?</h>
   <%= link_to 'Add new article', '/articles/new'%>
 </table>
+</div>
