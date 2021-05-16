@@ -13,21 +13,52 @@
   Submits form to edit the entry
   -->
 
-  <%= form_with(model: @article, local:true) do |f| %>
-    <p>
-      <%= f.label :title %>
-      <br>
-      <%= f.text_field :title, :class => "form-control" %>
-    </p>
+
+  <%= form_with(model: @article, class: "mt-6 color-info", local:true) do |f| %>
+
+    <div class = "container ">
+      <div class = "col-10">
+        <div class="row justify-content-center">
+          <div class="form-group row">
+            <%= f.label :title, :class => "col-2 form-label"%>
+            <div class = "col-10">
+            <%= f.text_field :title, :class => "col-10 form-control shadow rounded" %>
+          </div>
+        </div>
+        </div>
+    </div>
+    </div>
+
     <br>
-    <p>
-      <%=f.label :description %>
-      <br>
-      <%= f.text_area :description %>
-    </p>
-    <br>
-    <p>
-      <%= f.submit %>
-    </p>
+
+    <div class = "container ">
+      <div class = "col-10">
+        <div class="row justify-content-center">
+          <div class="form-group row">
+            <%= f.label :Description, :class => "col-2 form-label"%>
+            <div class = "col-10">
+              <%= f.text_area :title, rows: 10, :class => "col-10 form-control shadow rounded" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-3 justify-content-center">
+      <div class = "col-2">
+
+        <div class="form-group row">
+          <%= f.submit class: 'btn btn-primary'%>
+        </div>
+      </div>
+    </div>
+
+
+    </div>
+
+
+
+
+
   <% end %>
 <% end %>

@@ -26,3 +26,19 @@
 #indexPage{
   background-color: lightgrey;
 }
+
+#cardHeader{
+  font-style: italic;
+}
+
+.text-underline-hover {
+  text-decoration: none;
+}
+
+.text-underline-hover:hover {
+  text-decoration: underline;
+}
+
+.link-success{
+  text-decoration: none;
+}
