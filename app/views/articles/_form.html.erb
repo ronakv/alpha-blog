@@ -1,12 +1,5 @@
 
-<%if @article.errors.any? %>
-  <h2>The following errors prevented the article from being saved</h2>
-  <ul>
-    <% @article.errors.full_messages.each do|msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
-<% end %>
+
 
 
   <! --
@@ -19,6 +12,7 @@
     <div class = "container ">
       <div class = "col-10">
         <div class="row justify-content-center">
+          <%= render 'shared/errors' %>
           <div class="form-group row">
             <%= f.label :title, :class => "col-2 form-label"%>
             <div class = "col-10">
@@ -37,7 +31,7 @@
           <div class="form-group row">
             <%= f.label :Description, :class => "col-2 form-label"%>
             <div class = "col-10">
-              <%= f.text_area :title, rows: 10, :class => "col-10 form-control shadow rounded" %>
+              <%= f.text_area :description, rows: 10, :class => "col-10 form-control shadow rounded" %>
             </div>
           </div>
         </div>

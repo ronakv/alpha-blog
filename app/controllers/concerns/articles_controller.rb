@@ -38,7 +38,7 @@ class ArticlesController < ApplicationController
       # display a message using Rails' flash functionality
       flash[:notice] = "Article was created successfully"
     else
-      flash[:notice] = "Article was created unsuccessfully"
+      #flash[:notice] = "Article was created unsuccessfully"
       render 'articles/new'
       end
     # ^ Can also be written as redirect_to @article
