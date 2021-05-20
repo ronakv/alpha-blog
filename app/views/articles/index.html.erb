@@ -5,17 +5,12 @@
 
 
 </head>
+<body style="background-color:lightgrey;">
 <div id = "indexPage">
 <h1 class = "text-center mt-3">Articles Listing Page</h1>
 
 <table>
-  <thead>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th colspan = "3">Actions</th>
-  </tr>
-  </thead>
+
 
   <thbdy>
 
@@ -45,20 +40,9 @@
           </div>
       </div>
 
-      <tr>
 
-        <td><%= article.title %></td>
-        <td><%= article.description %></td>
-        <td><%= link_to 'Show', article_path(article), method: :get %></td>
-        <td><%= link_to 'Delete', article_path(article),
-                        method: :delete,
-                        data: { confirm: "Are you sure?" } %></td>
-        <td><%= link_to 'Edit', edit_article_path(article)
-                         %></td>
-      </tr>
       <% end %>
   </thbdy>
-  <h>Want to add a new article ?</h>
-  <%= link_to 'Add new article', '/articles/new'%>
+
 </table>
 </div>

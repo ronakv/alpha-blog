@@ -13,16 +13,25 @@
   background-repeat: no-repeat;
   background-size: cover;
   margin-bottom: 0px;
+  height: 500px;
 }
 
-#homeSubJumbo1{
-  margin-top: 0px !important;
+#homeJumbo2{
+  background-image: asset-url('jumbo2.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 0px;
+  height: 500px;
 }
+
 
 #sticky-footer {
   flex-shrink: none;
 }
-
+#homeSubJumbo1{
+  height: auto;
+}
 #indexPage{
   background-color: lightgrey;
 }
